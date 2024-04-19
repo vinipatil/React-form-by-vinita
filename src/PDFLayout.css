@@ -1,17 +1,13 @@
-/* PDFLayout.css */
-
 .pdf-layout {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 10px;
-    width: 90%;
-    /* border: 1px solid #ccc; */
+    width: 100%;
   }
   
   .form-slip {
     margin-top: 20px;
     width: 100%;
-    /* border: 1px solid #ccc; */
     padding: 20px;
     border-radius: 5px;
     font-size: 17px;
@@ -20,9 +16,7 @@
   .form-field {
     margin-bottom: 10px;
     display: flex;
-    /* Use flexbox for layout */
     justify-content: space-between;
-    /* Space between label and value */
   }
   
   .form-field label {
@@ -39,21 +33,13 @@
     margin-top: 30px;
     display: inline-block;
     width: calc(80% - 150px);
-    /* Adjust the width based on your design */
-    /* vertical-align: top; */
   }
-  
-  .form-slip img {
-    width: 27%;
-    border: 1px solid #000;
-    border-radius: 5px;
-    height: 250px;
-    /* margin-left: 70%; */
-  }
+
   
   .pdf-image {
     max-width: 200px;
-    max-height: 200px;
+    max-height: 250px;
     margin-top: 5px;
+    margin-right: 10%;
   }
   

@@ -4,7 +4,7 @@ import jsPDF from "jspdf";
 import PDFLayout from "./PDFLayout"; 
 import "./App.css";
 
-const PageFour = ({ formData, imageData }) => {
+const PageFour = ({ formData, imageData, previousPage }) => {
   const [generatingPDF, setGeneratingPDF] = useState(false);
   const contentRef = useRef(null); 
 
@@ -13,7 +13,7 @@ const PageFour = ({ formData, imageData }) => {
     setGeneratingPDF(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 300));
 
       const canvas = await html2canvas(contentRef.current, {
         scale: 2, 
@@ -49,8 +49,9 @@ const PageFour = ({ formData, imageData }) => {
       </div>
       
       <div className="prev-nxt">
+      <button className="pr" onClick={previousPage} >Previous</button>
         <button className="nx" onClick={(e) => handleSubmit(e)}>
-          {generatingPDF ? "Generating PDF..." : "Submit"}
+          {generatingPDF ? "Submit" : "Submit"}
         </button>
       </div>
     </div>
