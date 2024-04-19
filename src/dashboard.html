@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    }
+    
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    
+    table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      text-align: left;
+    }
+    
+    table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dashboard</h2>
+  <table id="formData">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Table body will be populated dynamically -->
+    </tbody>
+  </table>
+
+  <script>
+    // JavaScript code to populate the table with form data
+    document.addEventListener('DOMContentLoaded', function() {
+      const formData = JSON.parse(localStorage.getItem('formData'));
+      const tableBody = document.querySelector('#formData tbody');
+
+      if (formData) {
+        const { fullName, email, phoneNumber } = formData;
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${fullName}</td>
+          <td>${email}</td>
+          <td>${phoneNumber}</td>
+        `;
+        tableBody.appendChild(row);
+      }
+    });
+  </script>
+</body>
+</html>
